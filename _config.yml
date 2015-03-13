@@ -3,7 +3,7 @@ title: Kolibri Wonka
 email: hallo@kolibri.is
 description: > # this means to ignore newlines until "baseurl:"
   Þetta er kúltúrinn í Kolibri
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/wonka/" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
