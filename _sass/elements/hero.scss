@@ -1,0 +1,38 @@
+
+hero {
+  user-select: none;
+
+  cursor: default;
+  display: block;
+
+  margin: 0 auto $spacing;
+  height: 600px;
+
+  position: relative;
+  z-index: 20;
+
+  background-color: $color-primary;
+
+  inner {
+    animation: 2s fadein 1;
+
+    opacity: 1;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    padding: 0 $spacing/4;
+
+    width: 100%;
+    max-width: 600px;
+    line-height: rem-calc(80);
+
+    left: 0;
+    right: 0;
+
+    font-size: rem-calc(40);
+    text-align: center;
+    color: white;
+
+    background-color: $color-secondary;
+  }
+}

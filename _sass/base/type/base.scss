@@ -1,0 +1,50 @@
+
+p {
+  margin: 0 0 $spacing;
+}
+
+a {
+  transition: color $transition-speed-fast;
+  cursor: pointer;
+
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: mix(black,$color-primary,10%);
+  }
+
+  @each $i in $colorArray {
+    &.#{nth($i,1)} {
+      color: nth($i,2);
+
+      &:hover {
+        color: mix(black,nth($i,2),10%);
+      }
+    }
+    .#{nth($i,1)} & {
+      color: nth($i,3);
+
+      &:hover {
+        color: mix(black,nth($i,3),10%);
+      }
+    }
+  }
+}
+
+.text-tiny { font-size: rem-calc($font-size * 0.75); }
+.text-small { font-size: rem-calc($font-size  * 0.875); }
+.text-large { font-size: rem-calc($font-size * 1.125); }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+@each $i in $breakArray {
+  @include respond-to('#{nth($i,1)}-only') {
+    .#{nth($i,1)}-text-center { text-align: center; }
+    .#{nth($i,1)}-text-left { text-align: left; }
+    .#{nth($i,1)}-text-right { text-align: right; }
+  }
+}
