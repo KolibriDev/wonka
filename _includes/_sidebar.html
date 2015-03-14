@@ -1,0 +1,6 @@
+<h4>Efnisyfirlit</h4>
+
+{% for section in site.data.docs %}
+  <h4>{{ section.title }}</h4>
+  {% include sidebar-list.html items=section.docs %}
+{% endfor %}
