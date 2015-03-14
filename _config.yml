@@ -1,2 +1,11 @@
 name: Kolibri Wonka
 markdown: redcarpet
+
+defaults:
+  -
+    values:
+      layout: "default"
+
+collections:
+  docs:
+    output: true

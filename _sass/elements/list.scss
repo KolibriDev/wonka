@@ -1,5 +1,10 @@
 
-ul {}
+ul {
+  padding: 0;
+  li {
+    margin-bottom: .5em;
+  }
+}
 
 ol {}
 

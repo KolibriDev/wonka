@@ -1,6 +1,8 @@
-<h4>Efnisyfirlit</h4>
-
-{% for section in site.data.docs %}
-  <h4>{{ section.title }}</h4>
-  {% include sidebar-list.html items=section.docs %}
-{% endfor %}
+<aside>
+  {% for section in site.data.sitemap %}
+    <hgroup>
+      <h4>{{ section.title }}</h4>
+      {% include _sidebar-list.html items=section.pages %}
+    </hgroup>
+  {% endfor %}
+</aside>
