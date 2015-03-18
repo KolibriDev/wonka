@@ -105,12 +105,7 @@ $landscape: "#{$screen} and (orientation: landscape)";
 $portrait: "#{$screen} and (orientation: portrait)";
 
 $retina:
-  "(min--moz-device-pixel-ratio: 1.5),
-  (-o-min-device-pixel-ratio: 3/2),
-  (-webkit-min-device-pixel-ratio: 1.5),
-  (min-device-pixel-ratio: 1.5),
-  (min-resolution: 144dpi),
-  (min-resolution: 1.5dppx)";
+  "(min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5),(min-resolution: 144dpi),(min-resolution: 1.5dppx)";
 
 // To create new breakpoint:
 // Create range values, add to breakArray, add to respond-to mixin

@@ -5,7 +5,12 @@ defaults:
   -
     values:
       layout: "default"
+      title: "Wonka - Vinnukúltúr Kolibri"
 
 collections:
   docs:
     output: true
+
+sass:
+    sass_dir: _sass
+    style: :compressed
