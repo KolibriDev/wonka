@@ -20,13 +20,29 @@ body {
   height: 100%;
 }
 
-main {
+pagewrap {
+  display: block;
   min-height: 100%;
   min-width: $page-min-width;
   position: relative;
   z-index: 1;
   padding: 0;
 
+  &:before {
+    content: '';
+    @extend .loader;
+  }
+
+  transition: opacity $transition-speed;
+
+  html.loading &,
+  html.prep &,
+  html.re-loading & {
+    opacity: 0;
+  }
+}
+
+main {
   background: $body-background;
 }
 
