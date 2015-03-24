@@ -1,0 +1,78 @@
+
+pagewrap {
+  display: block;
+  min-height: 100%;
+  min-width: $page-min-width;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+
+  background: $body-background;
+
+  &:before {
+    content: '';
+    @extend .loader;
+
+    opacity: 0;
+    transition: opacity $transition-speed;
+
+    html.loading &,
+    html.prep &,
+    html.re-loading & {
+      opacity: 1;
+    }
+  }
+
+  transition: opacity $transition-speed;
+
+  html.loading &,
+  html.prep &,
+  html.re-loading & {
+    opacity: 0;
+  }
+}
+
+main {
+  background: $main-background;
+}
+
+// General elements
+code {
+  display: inline-block;
+  padding: 0 2px;
+  background: fade($color-dark,20%);
+  border: 1px dotted $color-light;
+}
+
+// Horizontal line
+hr {
+  @include clearfix;
+
+  background: 0;
+  border: 0;
+  outline: 0;
+
+  margin: $spacing 0;
+  height: 1px;
+  border-top: 1px solid $color-gray-light;
+
+  &.dotline {
+    border-top-style: dashed;
+  }
+
+  @each $name, $color, $text in $colorArray {
+    &.#{$name} {
+      border-top-color: $color;
+      &.light {
+        border-top-color: mix(white,$color,10%);
+      }
+      &.dark {
+        border-top-color: mix(black,$color,10%);
+      }
+    }
+
+    .#{$name} & {
+      border-top-color: $text;
+    }
+  }
+}

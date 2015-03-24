@@ -1,0 +1,54 @@
+
+.button, button {
+  transition: color $transition-speed-fast, background $transition-speed-fast, border $transition-speed-fast;
+
+  cursor: pointer;
+  vertical-align: bottom;
+  white-space: nowrap;
+  display: inline-block;
+
+  margin: 0;
+  position: relative;
+
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+
+  border: 1px solid;
+  border-radius: $button-radius;
+
+  outline: none;
+
+  @each $name, $size, $fontsize, $padd in $elementArray {
+    @include respond-to($name) {
+      padding: 0 $padd;
+      height: $size;
+      line-height: $size;
+      font-size: $fontsize;
+
+      &.wide {
+        padding: 0 ($padd * 2);
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &.fill {
+    @include text-overflow();
+    display: block;
+    margin: 0 auto $spacing;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
+}

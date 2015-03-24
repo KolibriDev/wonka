@@ -1,53 +1,35 @@
 ---
 ---
 
+@import "vendor/_normalize";
+
 @import
-  "vendor/_normalize",
+  "cress/functions",
+  "cress/mixins/mixins",
+  "cress/variables",
+  "cress/keyframes",
+  "cress/grid";
 
-  "base/functions",
+@import
+  "components/layout/base",
+  "components/layout/body",
+  "components/layout/footer",
+  "components/layout/header",
+  "components/layout/nav",
+  "components/layout/section",
 
-  "base/mixins/base",
-  "base/mixins/form",
-  "base/mixins/type",
-  "base/mixins/responsive",
-  // "base/mixins/triangle",
+  "components/box/base",
 
-  "base/variables",
+  "components/button/base",
+  "components/button/styles",
 
-  "base/keyframes",
-  "base/general",
-  "base/grid",
-  "base/visibility",
+  "components/hero/base",
 
-  "base/type/base",
-  "base/type/headings",
-  "base/type/icons",
+  "components/list/base",
+  "components/media/base",
 
-  "elements/loader",
-  "elements/media",
-  // "elements/box",
-  // "elements/draggable",
-  "elements/list",
-  // "elements/tabs",
-  // "elements/tooltip",
-  // "elements/message",
+  "components/typography/base",
+  "components/typography/headings",
+  "components/typography/icons",
 
-  // "elements/form/base",
-  // "elements/form/wrap",
-  // "elements/form/text",
-  // "elements/form/dropdown",
-  // "elements/form/checkradio",
-  // "elements/form/file",
-  // "elements/form/other",
-  // "elements/form/group",
-
-  "elements/button/base",
-  "elements/button/styles",
-
-  "elements/header",
-  // "elements/nav",
-  // "elements/breadcrumbs",
-  // "elements/hero",
-  // "elements/section",
-  "elements/aside",
-  "elements/footer";
+  "components/loader";
