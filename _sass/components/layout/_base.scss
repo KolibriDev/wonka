@@ -1,0 +1,59 @@
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+
+  line-height: $line-height;
+
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+
+  background: $body-background;
+
+  direction: $text-direction;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+// Default box-sizing to border-box, except for images and hr
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+hr,img {
+  box-sizing: content-box;
+}
+
+// Cheat classes
+
+.notransition {
+  transition: none !important;
+}
+
+.noscroll {
+  overflow: hidden !important;
+}
+
+.x-scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.y-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.relative {
+  position: relative;
+}
+
+.clear { clear: both; }
+.clearfix { @include clearfix(); }
+.float-right { float: right; }
+.float-left { float: left; }

@@ -1,0 +1,28 @@
+
+.box, box {
+  @include clearfix;
+  display: block;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacing;
+  padding: $spacing $spacing 0;
+
+  border-radius: $box-radius;
+
+  @each $name, $color, $text in $colorArray {
+    .content.#{$name},
+    &.#{$name} {
+      background-color: $color;
+      color: $text;
+
+      &.light {
+        background-color: mix(white,$color,10%);
+      }
+      &.dark {
+        background-color: mix(black,$color,10%);
+      }
+    }
+  }
+}

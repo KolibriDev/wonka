@@ -1,0 +1,28 @@
+
+section {
+  padding-top: $spacing;
+  padding-bottom: 0;
+
+  @include respond-to(medium) {
+    padding-top: $spacing*2;
+    padding-bottom: $spacing;
+  }
+
+  @each $name, $color, $text in $colorArray {
+    &.#{$name} {
+      background-color: $color;
+      color: $text;
+
+      @if lightness($text) > lightness($color) {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      &.light {
+        background-color: mix(white,$color,10%);
+      }
+      &.dark {
+        background-color: mix(black,$color,10%);
+      }
+    }
+  }
+}
