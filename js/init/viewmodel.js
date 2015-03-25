@@ -1,37 +1,36 @@
 define(['jquery','domReady','viewmodel'], function($,domReady,viewmodel) {
+  var $html, $body;
   domReady(viewmodel.init);
 
   domReady(function() {
+    $html = $('html');
+    $body = $('body');
     setTimeout(function(){
-      $('html').removeClass('loading');
-      $('html').addClass('prep');
+      $html.removeClass('loading');
+      $html.addClass('prep');
 
       setTimeout(function(){
-        $('html').removeClass('prep');
-        $('html').addClass('loaded');
-        $('html').addClass('post-load');
+        $html.removeClass('prep');
+        $html.addClass('loaded');
+        $html.addClass('post-load');
 
         $(document).trigger('loaded');
         $(window).trigger('resize');
         $(window).trigger('scroll');
 
         setTimeout(function(){
-          $('html').removeClass('post-load');
+          $html.removeClass('post-load');
         },1000);
       },500);
     },500);
 
-    var $body = $('body');
-    $(window).on('scroll', function(){
-      if ($(window).scrollTop() > 80) {
-        $body.attr('scrolled',true);
-      } else {
-        $body.attr('scrolled',false);
-      }
+    $(document).on('re-load', function(){
+      $(document).trigger('loaded');
+      $html.addClass('re-loading');
+      setTimeout(function(){
+        $html.removeClass('re-loading');
+      },500);
     });
 
-    if (viewmodel.isDev()) {
-      $('body').append($('<script type="text/javascript" />').attr('src','http://localhost:35729/livereload.js'));
-    }
   });
 });

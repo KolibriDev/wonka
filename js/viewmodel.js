@@ -30,15 +30,14 @@ define(['jquery'], function($) {
     },
     setState: function(section, state) {
       viewmodel.state[section] = state;
-      $('body').attr('data-' + section + '-state', state);
+      $('html').attr('data-' + section + '-state', state);
     },
     isOpen: function(section) {
       return viewmodel.state[section] === 'open';
     },
     isDev: function() {
       var devs = [
-        'vis.local',
-        'garpur.vis.is.local'
+        'localhost:4000'
       ];
       return $.inArray(window.location.host, devs) > -1;
     }
