@@ -1,25 +1,22 @@
-define(['domReady', 'domReady', 'navCtrl', 'navigate'], function(domReady, domReady, navCtrl, navigate) {
+define(['domReady', 'onLoad', 'navCtrl', 'navigate'], function(domReady, onLoad, navCtrl, navigate) {
   domReady(function(){
-    navCtrl.init();
-  });
-
-  domReady(function(){
+    navCtrl.init({analytics:false});
     if (navigate) {
-      $('header,sidebar').find('a:not([data-sidebar]):not([href^=mailto]):not([href^=tel]):not([href^=http])').off('click.nav').on('click.nav', function (evt) {
+      $('header,sidebar,support').find('a:not([data-sidebar]):not([href^=mailto]):not([href^=tel]):not([href^=http])').off('click.nav').on('click.nav', function (evt) {
         if (!evt.ctrlKey && !evt.metaKey && evt.which !== 2) {
           evt.preventDefault();
-          navigate.go($(this).attr('href'));
+          navigate.go($(this).attr('href'), $(this).attr('navigate') === 'last');
         }
       });
     }
   });
 
-  domReady(function(){
+  onLoad(function(){
     if (navigate) {
       $('pagewrap').find('a:not([href^=mailto]):not([href^=tel]):not([href^=http])').off('click.nav').on('click.nav', function (evt) {
         if (!evt.ctrlKey && !evt.metaKey && evt.which !== 2) {
           evt.preventDefault();
-          navigate.go($(this).attr('href'));
+          navigate.go($(this).attr('href'), $(this).attr('navigate') === 'last');
         }
       });
     }

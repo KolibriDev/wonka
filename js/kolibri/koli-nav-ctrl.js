@@ -5,15 +5,18 @@ define(['jquery', 'viewmodel'], function($, viewmodel) {
     state: {
       open: false,
       navigating: false,
+      last: '',
       href: '',
     },
 
-    options: {},
-    defaults: {},
+    defaults: {
+      analytics: true
+    },
 
     init: function(options) {
       nav.options = $.extend({},nav.defaults,options);
       nav.setState('location', nav.state.href || window.location.pathname);
+      nav.state.href = window.location.pathname;
     },
     attachEvents: function() {
     },
@@ -25,22 +28,28 @@ define(['jquery', 'viewmodel'], function($, viewmodel) {
 
     navigate: function(href) {
       nav.setState('navigating',true);
+      nav.state.last = nav.state.href;
       nav.state.href = href;
-
-      // $('title').text('Hleð ' + nav.state.href);
     },
 
     success: function(data) {
       $(document).trigger('re-load');
       nav.buildPage(data);
-      // if (_gaq) { _gaq.push(['_trackPageview']); }
+      if(nav.options.analytics) {
+        if (_gaq) { _gaq.push(['_trackPageview']); }
+      }
       nav.setState('location', nav.state.href);
+      nav.setState('navigating',false);
 
       nav.goToTop();
     },
 
-    fail: function() {
-      window.location.href = nav.state.href;
+    fail: function(data) {
+      if (data.status === 500) {
+        console.error('Server error! Do something pretty');
+      } else {
+        window.location.href = nav.state.href;
+      }
     },
 
     goToTop: function() {
@@ -51,6 +60,7 @@ define(['jquery', 'viewmodel'], function($, viewmodel) {
       var $body = $(body);
       $('title').text($body.filter('title').text());
       $('pagewrap').replaceWith($body.filter('pagewrap'));
+      $(document).trigger('re-loaded');
     },
 
   };

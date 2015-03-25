@@ -8,28 +8,27 @@ define(['jquery','navCtrl','history','smoothscroll','classList'], function($,nav
   });
 
   var navigate = {
-    go: function(href) {
-      if (href === navigate.cleanUrl()) {
-        navCtrl.close();
-      }
-      if (typeof href !== 'undefined' && href.substring(0,1) === '#') {
-        smoothscroll(false,href);
+    go: function(href, last) {
+      if (href && href.substring(0,1) === '#') {
+        smoothscroll.scrollTo(href);
       } else {
+        if (last && navCtrl.state.last !== '') {
+          href = navCtrl.state.last;
+        }
         History.pushState(null, null, navigate.cleanUrl(href));
       }
-      if (typeof href !== 'undefined' && href.indexOf('#') > -1) {
+      if (href && href.indexOf('#') > -1) {
         var hash = href.split('#');
         hash = hash[1];
-        smoothscroll(false,'#'+hash);
+        smoothscroll.scrollTo('#'+hash);
         $(document).on('re-loaded',function(){
-          smoothscroll(false,'#'+hash);
+          smoothscroll.scrollTo('#'+hash);
         });
       }
     },
 
     run: function(href) {
       try {
-
         navCtrl.navigate(href);
 
         $.ajax({
@@ -50,8 +49,8 @@ define(['jquery','navCtrl','history','smoothscroll','classList'], function($,nav
       if (!url) {
         return window.location.pathname;
       }
-      if (url.indexOf('localhost') > -1 || url.indexOf('.is') > -1) {
-        var divider = url.indexOf('localhost') > -1 ? ':1337' : '.is';
+      if (url.indexOf('localhost:4000') > -1 || url.indexOf('.is') > -1) {
+        var divider = url.indexOf('localhost:4000') > -1 ? ':4000' : '.is';
         url = url.split(divider);
         url = url[1];
       }
