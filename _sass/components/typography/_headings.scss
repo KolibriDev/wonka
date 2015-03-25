@@ -4,18 +4,23 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 
   line-height: $line-height;
-  font-family: $font-family;
+  font-family: $font-family-alt;
   font-weight: $font-weight;
 
   em {
-    font-family: $font-family-alt;
+    font-family: $font-family;
     font-style: italic;
     font-weight: 400;
   }
 }
 
 h1 {
-  font-size: rem-calc(40);
+  line-height: 1.29em;
+  font-size: rem-calc(32);
+  font-weight: 700;
+  @include respond-to(small) { font-size: rem-calc(62); }
+  @include respond-to(large) { font-size: rem-calc(94); }
+  @include respond-to(xxlarge) { font-size: rem-calc(124); }
 }
 
 h2 {
