@@ -2,6 +2,7 @@
 (function() {
   require.config({
     baseUrl: '/js',
+    urlArgs: 'nocache=' + (new Date()).getTime(),
     paths: {
       domReady: 'vendor/domReady',
       classList: 'vendor/classList',
