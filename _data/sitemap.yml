@@ -1,9 +1,21 @@
 - title: Kúltúrinn
+  color: blue
   pages:
-  - personuleiki.html
-  - gegnsaei.html
+  - kultur/personuleiki.html
+  - kultur/gegnsaei.html
 
-- title: Samstilling
+- title: Samstillingin
+  color: brown
   pages:
-  - heropid.html
-  - mas.html
+  - samstilling/heropid.html
+  - samstilling/mas.html
+
+- title: Lífveran
+  color: red
+  pages:
+  - lifvera/samfelag.html
+
+- title: Umheimurinn
+  color: teal
+  pages:
+  - umheimur/undirsida.html
