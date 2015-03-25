@@ -20,6 +20,6 @@
 
 - title: Umheimurinn
   descr: "Það kemur fyrir að fólk hafi áhuga á okkur og þá er hægt að sækja stoðefni hér."
-  color: teal
+  color: turquoise
   pages:
   - umheimur/undirsida.html
