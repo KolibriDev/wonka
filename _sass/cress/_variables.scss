@@ -11,9 +11,9 @@ $font-color: #333;
 $line-height: 1.25;
 
 // Sizes
-$spacing: rem-calc(20);
-$page-max-width: rem-calc(1280);
-$page-min-width: rem-calc(320);
+$spacing: 20px;
+$page-max-width: 1280px;
+$page-min-width: 320px;
 
 // Grid
 $grid-columns: 12;
@@ -125,12 +125,12 @@ $retina:
 // To create new breakpoint:
 // Create range values, add to breakArray, add to respond-to mixin
 
-$xsmall-range: (0rem, rem-calc(480));
-$small-range: (rem-calc(481), rem-calc(640));
-$medium-range: (rem-calc(641), rem-calc(830));
-$large-range: (rem-calc(831), rem-calc(1024));
-$xlarge-range: (rem-calc(1025), rem-calc(1200));
-$xxlarge-range: (rem-calc(1201), rem-calc(9999));
+$xsmall-range: (0rem, 480px);
+$small-range: (481px, 640px);
+$medium-range: (641px, 830px);
+$large-range: (831px, 1024px);
+$xlarge-range: (1025px, $page-max-width);
+$xxlarge-range: ($page-max-width + 1, 9999px);
 
 // name     lower-bound                 upper-bound
 $breakArray:
