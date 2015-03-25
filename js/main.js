@@ -18,6 +18,7 @@
       navigate: 'kolibri/koli-navigate',
       navCtrl: 'kolibri/koli-nav-ctrl',
       cssTranslate: 'kolibri/koli-css-translate',
+      onLoad: 'kolibri/koli-onload',
 
       align: 'kolibri/koli-align',
       alignHelpers: 'kolibri/koli-align-helpers',

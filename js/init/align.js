@@ -1,3 +1,3 @@
-define(['jquery','domReady','align'], function($,domReady,align) {
-  domReady(align.init);
+define(['jquery','onLoad','align'], function($,onLoad,align) {
+  onLoad(align.init);
 });

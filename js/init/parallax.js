@@ -1,4 +1,4 @@
-define(['domReady','cssTranslate','rafPolyfill','jquery','modernizr'], function(domReady, cssTranslate, rafPolyfill, $, Modernizr) {
+define(['onLoad','cssTranslate','rafPolyfill','jquery','modernizr'], function(onLoad, cssTranslate, rafPolyfill, $, Modernizr) {
 
   if (Modernizr.touch) {
     return;
@@ -57,7 +57,7 @@ define(['domReady','cssTranslate','rafPolyfill','jquery','modernizr'], function(
     requestTick();
   };
 
-  domReady(function() {
+  onLoad(function() {
     $sections = $('[parallax]');
     rafPolyfill();
     window.onscroll = doScroll;

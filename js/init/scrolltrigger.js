@@ -1,5 +1,5 @@
-define(['domReady','scrolltrigger'], function(domReady,scrolltrigger) {
-  domReady(function(){
+define(['onLoad','scrolltrigger'], function(onLoad,scrolltrigger) {
+  onLoad(function(){
     scrolltrigger.init(['[scrolltrigger]']);
   });
 });
