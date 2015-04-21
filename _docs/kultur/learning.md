@@ -19,10 +19,10 @@ title: Learning
 The main guideline is based on Reinventing Organizations. 
 Anyone can decide for him/herself to attend to a conference or a seminar, given a discussion with relevant roles, namely finance and learning, and the closest colleagues for scheduling purposes. 
 Kolibri pays: 
-- Conference and seminar fees 
-- All travel cost (flight, to and from airport, to and from venue/hotel, ...) 
-- Hotel 
-- Absence from work (summer vacation not needed) 
+* Conference and seminar fees 
+* All travel cost (flight, to and from airport, to and from venue/hotel, ...) 
+* Hotel 
+* Absence from work (summer vacation not needed) 
 Notes: 
 - Conference/seminar days count no more than 8 hours (1 day) each, regardless of whether it's a weekend or not 
 - Travel days count as half days (4 hours) each, unless it's a very long or strange travel 
