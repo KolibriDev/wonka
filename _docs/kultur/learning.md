@@ -1,3 +1,7 @@
+---
+title: Coaching and training
+---
+
 # Coaching and training #
 ## I am responsible for my own development ##
 ## Kolibri helps a Kolibrian to help himself ##
