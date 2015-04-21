@@ -3,7 +3,7 @@ title: Learning
 ---
 
 # Coaching and training
-## I am responsible for my own development
+## I am responsible for my own development.
 ## Kolibri helps a Kolibrian to help himself
 * through the culture of encouraging asking for help
 * with the decision making process (see Decision making)
