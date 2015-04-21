@@ -24,7 +24,7 @@ Kolibri pays:
 * Hotel 
 * Absence from work (summer vacation not needed) 
 Notes: 
-- Conference/seminar days count no more than 8 hours (1 day) each, regardless of whether it's a weekend or not 
-- Travel days count as half days (4 hours) each, unless it's a very long or strange travel 
-- Daily allowance, i.e. food and such, is not paid by Kolibri 
-- Cost transparence - fill out the google doc (General Company Circle/Learning and Pet Projects/Kostnaður-ráðstefnur-námskeið)
+* Conference/seminar days count no more than 8 hours (1 day) each, regardless of whether it's a weekend or not 
+* Travel days count as half days (4 hours) each, unless it's a very long or strange travel 
+* Daily allowance, i.e. food and such, is not paid by Kolibri 
+* Cost transparence - fill out the google doc (General Company Circle/Learning and Pet Projects/Kostnaður-ráðstefnur-námskeið)
