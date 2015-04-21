@@ -2,9 +2,10 @@
   descr: "Okkur hefur tekist að móta kúltúr sem við erum stolt af og byggir m.a. á gagnsæi og trausti."
   color: blue
   pages:
+  - kultur/decisions.html
+  - kultur/learning.html
   - kultur/personuleiki.html
   - kultur/gegnsaei.html
-  - kultur/learning.html
 
 - title: Samstillingin
   descr: "Við höldum takti þar sem samstilling hópsins skiptir miklu máli."
