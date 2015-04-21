@@ -2,9 +2,9 @@
 title: Coaching and training
 ---
 
-# Coaching and training #
-## I am responsible for my own development ##
-## Kolibri helps a Kolibrian to help himself ##
+# Coaching and training
+## I am responsible for my own development
+## Kolibri helps a Kolibrian to help himself
 * through the culture of encouraging asking for help
 * with the decision making process (see Decision making)
 * including decisions such as going to seminars and conferences
