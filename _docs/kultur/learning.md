@@ -16,10 +16,8 @@ title: Learning
 
 
 # Guidelines for attending conferences and seminars
-The main guideline is based on Reinventing Organizations. 
-Anyone can decide for him/herself to attend to a conference or a seminar, given a discussion with relevant roles, namely finance and learning, and the closest colleagues for scheduling purposes. 
-Kolibri pays: 
-
+## The main guideline is based on Reinventing Organizations. 
+### Anyone can decide for him/herself to attend to a conference or a seminar, given a discussion with relevant roles, namely finance and learning, and the closest colleagues for scheduling purposes. Kolibri pays: 
 * Conference and seminar fees 
 * All travel cost (flight, to and from airport, to and from venue/hotel, ...) 
 * Hotel 
