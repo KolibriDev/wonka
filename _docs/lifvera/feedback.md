@@ -1,6 +1,5 @@
----
-title: Getting and giving feedback
----
+Getting and giving feedback
+===
 
 Við ræddum þetta áðan (ég, Benni, Steinar, Þröstur, Gulli, Pétur og Helgi Páll) og kjarni málsins er: Hvernig vitum við hvað við gerum vel/illa sem partur af lífverunni Kolibri? 
 
