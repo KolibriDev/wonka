@@ -11,7 +11,8 @@ Við byrjuðum á því að horfa á hvernig okkur finnst það gerast í dag:
 * Vinnum í teymum
 * Augað og Stundin okkar
 
-Sjálfgefna leiðin í Kolibri er að treysta á að opin og náin samskipti félaganna í lífverunni nægi í flestum tilfellum. Þ.e., ef einhverjum finnist einhver standa sig vel eða illa muni hann hrósa þeim félaga eða segja honum hreint út hvað sé ekki nógu gott. 
+Sjálfgefna leiðin í Kolibri er að treysta á að opin og náin samskipti félaganna í lífverunni nægi í flestum tilfellum. Þ.e., ef einhverjum finnist einhver standa sig vel eða illa muni hann hrósa þeim félaga eða segja honum hreint út hvað sé ekki nógu gott.
+
 En hvað ef mönnum finnst það ekki nægilega gott? Við fengum eftirfarandi hugmynd eftir að hafa lesið um hvernig fyrirtækin AES, Buurtzorg, Morning Star og Valve gera þetta í teymum eða hringjum.
 
 ### Teymis-feedback
