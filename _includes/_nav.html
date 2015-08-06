@@ -8,7 +8,7 @@
         <h3>{{ section.title }}</h3>
         <p>{{ section.descr }}</p>
       </box>
-      {% include _sidebar-list.html items=section.pages %}
+      {% include _nav-sub.html items=section.pages %}
     </column>
   {% endfor %}
   </row>
