@@ -1,0 +1,52 @@
+
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+
+  margin-bottom: $spacing;
+  padding: 0 0;
+  height: 120px;
+
+  background: $color-red;
+
+  transform: translate3d(0,0,0);
+  transition: transform $trans-dur;
+
+  html[data-location='/'] &,
+  html.loading & {
+    transform: translate3d(0,-100%,0);
+  }
+
+  row, column {
+    height: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0; left: $spacing; bottom: 0;
+
+    margin: auto;
+    height: 42px;
+
+    h1 {
+      .svg-kolibri-flower {
+        width: 36px;
+
+        path {
+          fill: white;
+        }
+      }
+      span {
+        font-size: 34px;
+        letter-spacing: -2px;
+        color: white;
+      }
+      em {
+        display: none;
+        font-size: 9px;
+        color: white;
+      }
+    }
+  }
+}
