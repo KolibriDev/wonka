@@ -1,6 +1,6 @@
 
 .button, button {
-  transition: color $transition-speed-fast, background $transition-speed-fast, border $transition-speed-fast;
+  transition: color $trans-dur-fast, background $trans-dur-fast, border $trans-dur-fast;
 
   cursor: pointer;
   vertical-align: bottom;

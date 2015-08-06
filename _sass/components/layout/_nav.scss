@@ -1,67 +1,105 @@
 
 nav {
-  &.top {
-    user-select: none;
-    @include clearfix;
-    margin: 0 auto;
+  &.main {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
-    background-color: $color-dark;
+    .logo {
+      text-align: center;
+    }
 
-    ul { @include reset-list; margin: 0; padding: 0; }
+    row {
+      // white-space: nowrap;
+      overflow: hidden;
+    }
 
-    >ul {
-      font-size: 0;
+    box, .box {
+      display: block;
+      white-space: normal;
+      margin-bottom: 0;
 
-      li {
-        display: inline-block;
+      font-size: $font-size;
+
+      text-align: center;
+
+      &:before {
+        content: '';
+        z-index: 2;
+        display: block;
+        height: 4px;
+        position: absolute;
+        top: 0; left: 0; right: 0;
+      }
+
+      &:after {
+        content: '';
+      }
+
+      h3, p {
+        cursor: default;
         position: relative;
-        z-index: 30;
-        font-size: $font-size;
+        z-index: 1;
+      }
 
-        >a {
-          transition: background-color $transition-speed-fast;
-          display: block;
-          padding: $spacing;
-          line-height: rem-calc(20);
+      p {
+        line-height: 25px;
+        font-size: $font-size-small;
+        font-style: italic;
+      }
 
-          color: white;
-        }
+      // hover stuff
+      + tags {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
 
-        &:hover >a,
-        >a:hover {
-          color: white;
-          background-color: $color-light;
-        }
+        margin: 0;
+        padding: $spacing $spacing $spacing/2;
+        max-height: 100%;
+        background-color: white;
 
-        >ul {
+        transform: translate3d(0,-100%,0);
+
+        transition: transform $trans-dur-fast;
+        transition-delay: $trans-dur + $trans-dur-fast;
+
+        tag {
           opacity: 0;
-          visibility: hidden;
+          transition: opacity $trans-dur-fast;
+          transition-delay: $trans-dur;
+        }
 
+        &:before {
+          content: '';
           position: absolute;
-          top: 100%;
-          left: 0;
-          z-index: 30;
+          top: 0;
+          left: $spacing;
+          right: $spacing;
+          z-index: 0;
 
-          >li {
-            display: block;
-
-            >a {
-              white-space: nowrap;
-              padding: $spacing/2 $spacing;
-              background: $color-light;
-
-              &:hover { background-color: darken($color-light,5%); }
-            }
-          }
+          border-top: 1px solid rgba($color-light,0);
+          transition: border $trans-dur-fast;
+          transition-delay: $trans-dur;
         }
+      }
 
-        &:hover {
-          >ul {
-            transition: opacity $transition-speed-fast;
-            opacity: 1;
-            visibility: visible;
-          }
-        }
+    }
+    box + tags:hover,
+    box:hover + tags {
+      max-height: none;
+      transform: translate3d(0,0,0);
+      transition-delay: $trans-dur-fast;
+
+      &:before {
+        border-top-color: rgba($color-light,1);
+        transition-delay: $trans-dur-fast*2;
+      }
+      tag {
+        opacity: 1;
+        transition-delay: $trans-dur-fast;
       }
     }
   }

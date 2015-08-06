@@ -7,17 +7,22 @@
   <body>
     {% include _header.html %}
 
+    {% include _sidebar.html %}
+
     <pagewrap>
+      <div class="fb-spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+
       <main>
         <row>
-          <column class="small-8">
+          <column>
             {{ content }}
           </column>
-
-          <column class="small-4">
-            {% include _sidebar.html %}
-          </column>
-
         </row>
       </main>
     </pagewrap>

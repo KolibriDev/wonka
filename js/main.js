@@ -33,7 +33,7 @@
       jquery: { exports: '$' },
       jQeasing: { deps: ['jquery'] },
       underscore: { exports: '_' },
-      history: { exports: 'History' },
+      history: { deps: ['jquery'], exports: 'History' },
       modernizr: { exports: 'Modernizr' },
     }
   });

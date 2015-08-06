@@ -4,7 +4,7 @@ p {
 }
 
 a {
-  transition: color $transition-speed-fast;
+  transition: color $trans-dur-fast;
   cursor: pointer;
 
   color: $color-dark;

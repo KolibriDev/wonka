@@ -59,7 +59,7 @@ define(['jquery', 'viewmodel'], function($, viewmodel) {
     buildPage: function(body) {
       var $body = $(body);
       $('title').text($body.filter('title').text());
-      $('pagewrap').replaceWith($body.filter('pagewrap'));
+      $('pagewrap main').replaceWith($body.filter('pagewrap').find('main'));
       $(document).trigger('re-loaded');
     },
 
