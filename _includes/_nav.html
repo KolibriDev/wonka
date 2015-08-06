@@ -4,11 +4,11 @@
   <row>
   {% for section in site.data.sitemap %}
     <column class="medium-3">
-      <box class="accent-{{ section.color }}">
+      <box class="color-{{ section.color }}" token="{{ section.title | truncate: 1, '' | capitalize }}">
         <h3>{{ section.title }}</h3>
         <p>{{ section.descr }}</p>
       </box>
-      {% include _nav-sub.html items=section.pages %}
+      {% include _nav-sub.html items=section.pages color=section.color %}
     </column>
   {% endfor %}
   </row>
