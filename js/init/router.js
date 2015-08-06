@@ -14,7 +14,7 @@ define(['domReady', 'onLoad', 'jquery', 'router'], function(domReady, onLoad, $,
     $(window).on('popstate', function(){
       router.navigate(window.location.pathname + window.location.search + window.location.hash);
     });
-    $('nav.main').find(selector).off('click.nav').on('click.nav', router.clickHandler);
+    $('header, nav.main').find(selector).off('click.nav').on('click.nav', router.clickHandler);
   });
 
   onLoad(function(){

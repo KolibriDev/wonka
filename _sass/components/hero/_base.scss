@@ -54,7 +54,13 @@ hero {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       z-index: 1;
-      background: rgba($color-red,0.5);
+      background: rgba($color-yellow,0.5);
+
+      @each $name, $color, $text in $colorArray {
+        html[data-color="#{$name}"] & {
+          background: rgba($color, 0.5);
+        }
+      }
     }
 
     h1 {
