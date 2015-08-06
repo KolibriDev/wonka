@@ -2,20 +2,20 @@
   require.config({
     baseUrl: '/js',
     paths: {
-      zepto: 'vendor/zepto-build',
-      promise: 'vendor/promise',
+      jquery: 'vendor/jquery',
       domReady: 'vendor/domReady',
-      modernizr: 'vendor/modernizr',
+      underscore: 'vendor/underscore',
 
       onLoad: 'vendor/koli-onload',
-    },
-    shim: {
-      modernizr: { exports: 'Modernizr' },
-      zepto: { exports: 'Zepto' },
+      keys: 'vendor/koli-keys',
+      req: 'vendor/koli-requests',
+
+      router: 'code/router',
     }
   });
 
   require([
-    'wonka'
+    'wonka',
+    'init/router',
   ]);
 }).call(this);

@@ -1,4 +1,4 @@
-define(['domReady', 'zepto'], function(domReady, $){
+define(['domReady', 'jquery'], function(domReady, $){
   'use strict';
   var onLoad = function(callback, reLoadCallback) {
     domReady(callback);
