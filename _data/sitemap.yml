@@ -18,6 +18,8 @@
   descr: "Hvað gerum við til að þroska Kolibri sem lífveru?"
   color: red
   pages:
+  - lifvera/abyrgdir.html
+  - lifvera/akvardanir.html
   - lifvera/samfelag.html
 
 - title: Umheimurinn

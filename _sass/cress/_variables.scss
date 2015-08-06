@@ -10,17 +10,22 @@ $font-size: 16px;
 $font-color: #333;
 $line-height: 1.25;
 
+$font-size-tiny: 12px;
+$font-size-small: 14px;
+$font-size-large: 20px;
+$font-size-larger: 26px;
+
 // Sizes
-$spacing: rem-calc(20);
-$page-max-width: rem-calc(1280);
-$page-min-width: rem-calc(320);
+$spacing: 20px;
+$page-max-width: 1280px;
+$page-min-width: 320px;
 
 // Grid
 $grid-columns: 12;
 $grid-gutter: $spacing;
 
 // Radius
-$radius: rem-calc(2);
+$radius: 0;
 $box-radius: $radius;
 $form-radius: $radius;
 $button-radius: 50px;
@@ -75,6 +80,7 @@ $color-green: #1FA95F;
 $color-blue: #1789AA;
 $color-red: #E15A50;
 $color-purple: #857069;
+$color-turquoise: #54BBBC;
 
 $color-border: $color-gray;
 $font-color: $color-dark;
@@ -82,13 +88,15 @@ $font-color: $color-dark;
 // Color array used for hr, links, boxes, buttons, forms, messages and sections
 // color-name   color-value         font-color
 $colorArray:
-  ("green" $color-green $color-light)
-  ("blue" $color-blue $color-light)
-  ("red" $color-red $color-light)
-  ("purple" $color-purple $color-dark)
-  ("yellow" $color-yellow $color-dark)
-  ("dark" $color-dark $color-light)
-  ("light" $color-light $color-dark)
+  ("green",     $color-green,  white)
+  ("blue",      $color-blue,   white)
+  ("red",       $color-red,    white)
+  ("purple",    $color-purple, white)
+  ("brown",     $color-purple, white)
+  ("turquoise", $color-turquoise, white)
+  ("yellow",    $color-yellow, $color-dark)
+  ("dark",      $color-dark,   white)
+  ("light",     $color-light,  $color-dark)
 ;
 // $color-count: length($colorArray);
 
@@ -109,10 +117,10 @@ $opposite-float: right;
 }
 
 // Transitions duration
-$transition-speed-fast: 125ms;
-$transition-speed: 250ms;
-$transition-speed-slow: 350ms;
-$transition-speed-slower: 600ms;
+$trans-dur-fast: 125ms;
+$trans-dur: 250ms;
+$trans-dur-slow: 350ms;
+$trans-dur-slower: 600ms;
 
 // Media Queries
 $screen: "only screen";
@@ -125,12 +133,12 @@ $retina:
 // To create new breakpoint:
 // Create range values, add to breakArray, add to respond-to mixin
 
-$xsmall-range: (0rem, rem-calc(480));
-$small-range: (rem-calc(481), rem-calc(640));
-$medium-range: (rem-calc(641), rem-calc(830));
-$large-range: (rem-calc(831), rem-calc(1024));
-$xlarge-range: (rem-calc(1025), rem-calc(1200));
-$xxlarge-range: (rem-calc(1201), rem-calc(9999));
+$xsmall-range: (0rem, 480px);
+$small-range: (481px, 640px);
+$medium-range: (641px, 830px);
+$large-range: (831px, 1024px);
+$xlarge-range: (1025px, $page-max-width);
+$xxlarge-range: ($page-max-width + 1, 9999px);
 
 // name     lower-bound                 upper-bound
 $breakArray:

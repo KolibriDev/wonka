@@ -1,21 +1,21 @@
 {% assign items = include.items %}
 
-<ul>
+<tags>
 {% for item in items %}
   {% assign item_url = item | prepend:"/docs/" %}
 
   {% if item_url == page.url %}
-    {% assign c = "active" %}
+    {% assign active = "active" %}
   {% else %}
-    {% assign c = "" %}
+    {% assign active = "" %}
   {% endif %}
 
   {% for p in site.docs %}
     {% if p.url == item_url %}
-      <li class="{{ c }}"><a href="{{ site.baseurl }}{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
+      <tag><a class="{{ active }}" href="{{ site.baseurl }}{{ site.url }}{{ p.url }}"><span>{{ p.title }}</span></a></tag>
       {% break %}
     {% endif %}
   {% endfor %}
 
 {% endfor %}
-</ul>
+</tags>

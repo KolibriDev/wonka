@@ -3,37 +3,33 @@ pagewrap {
   display: block;
   min-height: 100%;
   min-width: $page-min-width;
-  position: relative;
-  z-index: 1;
-  padding: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  padding: 120px 0 0;
 
-  background: $body-background;
+  @extend .x-scroll;
 
-  &:before {
-    content: '';
-    @extend .loader;
+  background: white;
 
-    opacity: 0;
-    transition: opacity $transition-speed;
+  transition: transform $trans-dur;
 
-    html.loading &,
-    html.prep &,
-    html.re-loading & {
-      opacity: 1;
-    }
-  }
-
-  transition: opacity $transition-speed;
-
-  html.loading &,
-  html.prep &,
-  html.re-loading & {
-    opacity: 0;
+  html[data-location-state='/'] &,
+  html.loading & {
+    transform: scale(0);
   }
 }
 
 main {
-  background: $main-background;
+  // background: $main-background;
+
+  opacity: 1;
+  transition: opacity $trans-dur;
+
+  html[data-navigating-state='true'] &,
+  html.re-loading & {
+    opacity: 0;
+  }
 }
 
 // General elements
@@ -73,6 +69,46 @@ hr {
 
     .#{$name} & {
       border-top-color: $text;
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 80px;
+
+  a { display: block; }
+
+  h1 {
+    display: inline-block;
+    margin-bottom: $spacing*2;
+    position: relative;
+    font-size: 0;
+
+    .svg-kolibri-flower {
+      display: inline-block;
+      vertical-align: middle;
+
+      width: 68px;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+
+      font-weight: 500;
+      font-size: 68px;
+      letter-spacing: -4px;
+    }
+
+    em {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      font-size: 18px;
+
+      transform: translateY(100%);
     }
   }
 }

@@ -9,14 +9,6 @@ row, column { display: block; }
       &.#{$className}-#{$col} { width: grid-calc($col); }
     }
   }
-  @mixin grid-center($className: 'span') {
-    &.#{$className}-centered {
-      margin-#{$default-float}: auto;
-      margin-#{$opposite-float}: auto;
-      float: none !important;
-      clear: both;
-    }
-  }
   @mixin grid-offset($className: '') {
     @if($className != '') {
       $className: "#{$className}-";
@@ -44,6 +36,12 @@ row, column { display: block; }
   width: 100%;
   max-width: $page-max-width;
 
+  text-align: center;
+  font-size: 0;
+
+  &.align-left { text-align: left; }
+  &.align-right { text-align: right; }
+
   .row, .col > &,
   row, column > & {
     margin-left: -$grid-gutter;
@@ -54,34 +52,26 @@ row, column { display: block; }
 
   .col, column {
     @include clearfix;
-    float: $default-float;
     position: relative;
-    display: block;
+    display: inline-block;
+    vertical-align: top;
     width: 100%;
 
     min-height: 1px;
     padding-left: $grid-gutter/2;
     padding-right: $grid-gutter/2;
 
-    &.col-centered {
-      margin-#{$default-float}: auto;
-      margin-#{$opposite-float}: auto;
-      float: none !important;
-      clear: both;
-    }
-
-    &.right { float: $opposite-float; }
+    font-size: $font-size;
+    text-align: left;
 
     @each $name, $lower, $upper in $breakArray {
       @include respond-to($name) {
         @include grid-columns($name);
-        @include grid-center('#{$name}-up');
         @include grid-offset('#{$name}-up');
         @include grid-ordering('#{$name}-up');
       }
 
       @include respond-to('#{$name}-only') {
-        @include grid-center($name);
         @include grid-offset($name);
         @include grid-ordering($name);
       }
@@ -89,12 +79,6 @@ row, column { display: block; }
 
     @include grid-offset();
     @include grid-ordering();
-  }
-
-  &.row-reverse {
-    > .col, > column {
-      float: $opposite-float;
-    }
   }
 
   &.no-gutter {
