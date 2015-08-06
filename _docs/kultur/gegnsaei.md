@@ -1,5 +1,5 @@
 ---
-title: Gegnsæi
+title: Gagnsæi
 ---
 
-# Gegnsæi
+# Gagnsæi
