@@ -4,36 +4,5 @@
 @import "vendor/_normalize";
 
 @import
-  "cress/functions",
-  "cress/mixins/mixins",
-  "cress/variables",
-  "cress/keyframes",
-  "cress/grid";
-
-@import
-  "components/layout/base",
-  "components/layout/body",
-  "components/layout/footer",
-  "components/layout/header",
-  "components/layout/nav",
-  "components/layout/section",
-
-  "components/box/base",
-
-  "components/button/base",
-  "components/button/styles",
-
-  "components/hero/base",
-
-  "components/list/base",
-  "components/media/base",
-
-  "components/vectors/base",
-
-  "components/loading/base",
-
-  "components/typography/base",
-  "components/typography/headings",
-  "components/typography/icons",
-
-  "components/tags";
+  "base/mixins/mixins",
+  "base/variables";
