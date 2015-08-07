@@ -1,5 +1,6 @@
 
 pagewrap {
+  overflow: hidden;
   display: block;
   min-height: 100%;
   min-width: $page-min-width;
@@ -8,15 +9,20 @@ pagewrap {
   z-index: 50;
   padding: 120px 0 0;
 
-  @extend .x-scroll;
-
   background: white;
 
   transition: transform $trans-dur;
 
+  transform: scale(1);
+  transform-origin: 50% 50%;
+
   html[data-location='/'] &,
-  html.loading & {
+  html[data-load-state="loading"] & {
     transform: scale(0);
+  }
+
+  &.scrollable {
+    @extend .y-scroll;
   }
 }
 
@@ -27,7 +33,7 @@ main {
   transition: opacity $trans-dur;
 
   html[data-navigating='true'] &,
-  html.re-loading & {
+  html[data-load-state="ajax-loading"] & {
     opacity: 0;
   }
 }

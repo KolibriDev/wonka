@@ -1,7 +1,6 @@
 
 html {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   height: 100%;
 
   line-height: $line-height;
@@ -13,9 +12,14 @@ html {
   background: $body-background;
 
   direction: $text-direction;
+
+  &, * {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 body {
+  overflow: hidden;
   margin: 0;
   height: 100%;
 
@@ -55,20 +59,56 @@ hr,img {
 }
 
 .x-scroll {
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
+  &.force { overflow-x: scroll; }
 }
 
 .y-scroll {
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  &.force { overflow-y: scroll; }
 }
 
-.relative {
-  position: relative;
-}
+.x-scroll.force, .y-scroll.force,
+.x-scroll, .y-scroll {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    width: 8px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
 
-.clear { clear: both; }
-.clearfix { @include clearfix(); }
-.float-right { float: right; }
-.float-left { float: left; }
+  &::-webkit-scrollbar-track {
+    background: rgba($color-dark,.1);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    transition: background $trans-dur;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: $color-dark;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background $trans-dur;
+  }
+
+  &.scroll-hidden {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+  @each $name, $color, $text in $colorArray {
+    html[data-color="#{$name}"] & {
+      &::-webkit-scrollbar-track {
+        background: rgba($color,.1);
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color;
+      }
+    }
+  }
+}

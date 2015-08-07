@@ -1,3 +1,5 @@
+$debug: true;
+
 // Typography
 $font-family: 'Merriweather', 'Georgia', 'Times New Roman', Times, serif;
 $font-family-alt: 'ars-maquette-web', Helvetica, Arial, sans-serif;
@@ -78,6 +80,13 @@ $trans-dur-fast: 100ms;
 $trans-dur: 200ms;
 $trans-dur-slow: 300ms;
 $trans-dur-slower: 400ms;
+
+@if $debug {
+  $trans-dur-fast: $trans-dur-fast * 5;
+  $trans-dur: $trans-dur * 5;
+  $trans-dur-slow: $trans-dur-slow * 5;
+  $trans-dur-slower: $trans-dur-slower * 5;
+}
 
 // Media Queries
 $screen: "only screen";
