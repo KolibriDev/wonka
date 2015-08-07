@@ -7,8 +7,7 @@ define(function (require) {
   window.ga.l = 1 * new Date();
 
   // Immediately add a pageview event to the queue.
-  window.ga('create', 'UA-???????-?', 'wonka.kolibri.is');
-  window.ga('require', 'displayfeatures');
+  window.ga('create', 'UA-51985826-3', 'wonka.kolibri.is');
   window.ga('send', 'pageview');
 
   // Create a function that wraps `window.ga`.
@@ -21,7 +20,7 @@ define(function (require) {
       return window.location.pathname;
     }
     if (url.indexOf('localhost') > -1 || url.indexOf('.is') > -1) {
-      var divider = url.indexOf('localhost') > -1 ? '.local' : '.is';
+      var divider = url.indexOf('localhost') > -1 ? 'localhost:4000' : '.is';
       url = url.split(divider);
       url = url[1];
     }

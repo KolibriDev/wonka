@@ -54,13 +54,12 @@ define(['global', 'analytics','support/history', 'jquery', 'req', 'keys'], funct
       return res;
     },
 
-    success: function(res/*, href*/) {
+    success: function(res, href) {
       _router.buildPage(res);
-      // TODO: enable google analytics
-      // analytics('send', 'pageview', {
-      //   page: analytics.cleanUrl(href),
-      //   title: $(res).filter('title').text()
-      // });
+      analytics('send', 'pageview', {
+        page: analytics.cleanUrl(href),
+        title: $(res).filter('title').text()
+      });
       _router.setState('location', _router.state.href);
       _router.setState('navigating',false);
     },
