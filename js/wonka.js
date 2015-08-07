@@ -1,6 +1,8 @@
 define(['onLoad', 'global'], function(onLoad, global) {
   'use strict';
 
+  global.attribute.set('load-state', 'post-load');
+
   onLoad(function(){
     // domReady
     global.attribute.set('load-state', 'ready');

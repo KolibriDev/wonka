@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-load-state="loading">
+<html data-load-state="loading" data-location="/">
   <head>
     {% include _head.html %}
   </head>
@@ -19,8 +19,8 @@
       </div>
 
       <main>
-        <hero>
-          <inner style="background-image: url('{{ page.hero_image }}');">
+        <hero style="background-image: url('{{ page.hero_image }}');">
+          <inner>
             <h1>{{ page.title }}</h1>
           </inner>
         </hero>
