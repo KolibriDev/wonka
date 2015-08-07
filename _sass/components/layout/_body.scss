@@ -40,8 +40,11 @@ main {
   inner {
     display: block;
     margin: auto;
-    padding: 0;
-    width: $page-max-width;
+    padding: 0 $spacing*2 $spacing*2;
+    max-width: $page-max-width;
+    @include respond-to(768) {
+      padding: 0 $spacing*4 $spacing*4;
+    }
   }
 }
 

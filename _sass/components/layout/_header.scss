@@ -18,7 +18,12 @@ header {
     transform: translate3d(0,-100%,0);
   }
 
-  row, column {
+  inner {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 0;
+    max-width: $page-max-width;
     height: 100%;
   }
 

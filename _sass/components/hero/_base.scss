@@ -11,6 +11,8 @@ hero {
   z-index: 20;
 
   background-color: $color-dark;
+  background-size: cover;
+  background-position: 50% 50%;
 
   &:before {
     content: '';
@@ -20,6 +22,13 @@ hero {
 
     @include respond-to(1000px) {
       padding-top: 300px;
+    }
+    background: rgba($color-yellow,0.5);
+
+    @each $name, $color, $text in $colorArray {
+      html[data-color="#{$name}"] & {
+        background: rgba($color, 0.5);
+      }
     }
   }
 
@@ -41,27 +50,6 @@ hero {
     font-size: rem-calc(40);
     text-align: center;
     color: white;
-
-    background-color: $color-dark;
-    background-image: url('//img.kolibri.is/kolibri/_A9T1184-scaled.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
-
-
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 1;
-      background: rgba($color-yellow,0.5);
-
-      @each $name, $color, $text in $colorArray {
-        html[data-color="#{$name}"] & {
-          background: rgba($color, 0.5);
-        }
-      }
-    }
 
     h1 {
       position: relative;
