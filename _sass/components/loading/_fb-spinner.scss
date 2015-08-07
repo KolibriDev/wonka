@@ -34,6 +34,12 @@
 
   -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
   animation: stretchdelay 1.2s infinite ease-in-out;
+
+  @each $name, $color, $text in $colorArray {
+    html[data-color="#{$name}"] & {
+      background-color: $color;
+    }
+  }
 }
 
 .fb-spinner .rect2 {
