@@ -4,7 +4,7 @@
   <row>
   {% for section in site.data.sitemap %}
     <column class="medium-3">
-      <box class="color-{{ section.color }}" token="{{ section.title | truncate: 1, '' | capitalize }}">
+      <box class="color-{{ section.color }}" section="{{ section.alias }}" color="{{ section.color }}" token="{{ section.title | truncate: 1, '' | capitalize }}">
         <h3>{{ section.title }}</h3>
         <p>{{ section.descr }}</p>
       </box>

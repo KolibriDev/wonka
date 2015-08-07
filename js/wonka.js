@@ -1,40 +1,21 @@
 define(['onLoad', 'global'], function(onLoad, global) {
   'use strict';
-  if (!$('html').attr('data-color')) {
-    global.attribute.set('color', 'yellow');
-  } else {
-    var color = $('html').attr('data-color');
-    global.attribute.set('color', color);
-  }
 
   onLoad(function(){
     // domReady
-    $('html').removeClass('loading');
-    $('html').addClass('post-load');
+    global.attribute.set('load-state', 'ready');
+    console.log('do ready');
 
-    $(document).trigger('loaded');
-
-    // TODO: Use transitionend
-    // $(selector).on('transitionend', function(){});
-    setTimeout(function(){
-      $('html').removeClass('post-load');
-      $('html').addClass('loaded');
-    },500);
-
-    $('a[color]').off('click.color').on('click.color', function(){
-      var color = $(this).attr('color');
-      global.attribute.set('color', color);
+    $('pagewrap').on('transitionend', function(){
+      $('pagewrap').addClass('scrollable');
     });
   }, function(){
-    // re-loading
-    $('html').addClass('re-loading');
-    $(document).trigger('re-loaded');
+    // on ajax-loading
+    global.attribute.set('load-state', 'ajax-loading');
+    $('pagewrap').removeClass('scrollable');
 
-    // TODO: Use transitionend
-    // $(selector).on('transitionend', function(){});
-    setTimeout(function(){
-      $('html').removeClass('re-loading');
-      $('html').addClass('re-loaded');
-    },500);
+    $(document).on('ajax-loaded loaded', function(){
+      global.attribute.set('load-state', 'ready');
+    });
   });
 });

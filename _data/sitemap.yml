@@ -1,4 +1,5 @@
 - title: Kúltúrinn
+  alias: kultur
   descr: "Okkur hefur tekist að móta kúltúr sem við erum stolt af og byggir m.a. á gagnsæi og trausti."
   color: blue
   pages:
@@ -6,8 +7,10 @@
   - kultur/learning.html
   - kultur/personuleiki.html
   - kultur/gegnsaei.html
+  - kultur/kitchen.html
 
 - title: Samstillingin
+  alias: samstilling
   descr: "Við höldum takti þar sem samstilling hópsins skiptir miklu máli."
   color: brown
   pages:
@@ -15,6 +18,7 @@
   - samstilling/mas.html
 
 - title: Lífveran
+  alias: lifvera
   descr: "Hvað gerum við til að þroska Kolibri sem lífveru?"
   color: red
   pages:
@@ -23,6 +27,7 @@
   - lifvera/samfelag.html
 
 - title: Umheimurinn
+  alias: umheimur
   descr: "Það kemur fyrir að fólk hafi áhuga á okkur og þá er hægt að sækja stoðefni hér."
   color: turquoise
   pages:

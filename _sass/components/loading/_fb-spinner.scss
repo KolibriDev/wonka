@@ -13,9 +13,8 @@
   opacity: 0;
   transition: opacity $trans-dur, z-index 1ms ease $trans-dur;
 
-  html.loading &,
-  html.prep &,
-  html.re-loading & {
+  html[data-load-state="loading"]
+  html[data-load-state="ajax-loading"] & {
     z-index: 999;
     opacity: 1;
     transition: opacity $trans-dur ease 1ms, z-index 1ms;

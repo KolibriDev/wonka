@@ -38,6 +38,7 @@ define(['global', 'analytics','support/history', 'jquery', 'req', 'keys'], funct
       _router.state.last = _router.state.href;
       _router.state.href = href;
 
+      $(document).trigger('ajax-loading');
       var res = req.get(href, 'router');
       $.when( res.promise ).done(function(data){
         $('html,body').stop().animate({ scrollTop: 0 }, 200);
@@ -84,8 +85,11 @@ define(['global', 'analytics','support/history', 'jquery', 'req', 'keys'], funct
         if ($('pagewrap').length <= 0) {
           $('header').after($('<pagewrap />'));
         }
-        $('pagewrap').replaceWith($res.filter('pagewrap'));
-        $(document).trigger('re-loading');
+        if ($('pagewrap').find('main').length <= 0) {
+          $('pagewrap').append($('<main />'));
+        }
+        $('pagewrap main').replaceWith($res.find('main'));
+        $(document).trigger('ajax-loaded');
       }
     },
 

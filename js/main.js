@@ -17,5 +17,6 @@
   require([
     'wonka',
     'init/router',
+    'init/colours',
   ]);
 }).call(this);

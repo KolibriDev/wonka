@@ -14,7 +14,7 @@ header {
   transition: transform $trans-dur;
 
   html[data-location='/'] &,
-  html.loading & {
+  html[data-load-state="loading"] & {
     transform: translate3d(0,-100%,0);
   }
 
