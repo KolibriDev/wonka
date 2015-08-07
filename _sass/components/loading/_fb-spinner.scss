@@ -2,7 +2,6 @@
 .fb-spinner {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
 
   margin: auto;
   width: 80px;
@@ -10,12 +9,18 @@
   text-align: center;
   font-size: 0px;
 
-  opacity: 0;
-  transition: opacity $trans-dur, z-index 1ms ease $trans-dur;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity $trans-dur ease 1ms, z-index 1ms;
+
+  pagewrap.visible & {
+    z-index: -1;
+    opacity: 0;
+    transition: opacity $trans-dur, z-index 1ms ease $trans-dur;
+  }
 
   html[data-load-state="loading"]
   html[data-load-state="ajax-loading"] & {
-    z-index: 999;
     opacity: 1;
     transition: opacity $trans-dur ease 1ms, z-index 1ms;
   }
