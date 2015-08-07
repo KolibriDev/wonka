@@ -36,6 +36,13 @@ main {
   html[data-load-state="ajax-loading"] & {
     opacity: 0;
   }
+
+  inner {
+    display: block;
+    margin: auto;
+    padding: 0;
+    width: $page-max-width;
+  }
 }
 
 // General elements

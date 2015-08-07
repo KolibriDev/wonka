@@ -1,6 +1,6 @@
 
-.box, box {
-  @include clearfix;
+box {
+  @extend %clearfix;
   display: block;
   position: relative;
 
