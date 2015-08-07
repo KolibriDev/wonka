@@ -11,7 +11,7 @@ pagewrap {
 
   background: white;
 
-  transition: transform $trans-dur;
+  transition: transform $trans-dur-slow;
 
   transform: scale(1);
   transform-origin: 50% 50%;
@@ -21,7 +21,7 @@ pagewrap {
     transform: scale(0);
   }
 
-  &.scrollable {
+  &.visible {
     @extend .y-scroll;
   }
 }
@@ -29,12 +29,12 @@ pagewrap {
 main {
   // background: $main-background;
 
-  opacity: 1;
+  opacity: 0;
   transition: opacity $trans-dur;
+  transition-delay: 0ms;
 
-  html[data-navigating='true'] &,
-  html[data-load-state="ajax-loading"] & {
-    opacity: 0;
+  pagewrap.visible & {
+    opacity: 1;
   }
 
   inner {
