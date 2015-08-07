@@ -1,0 +1,11 @@
+
+<nav class="main">
+  {% include _logo.html %}
+  {% for section in site.data.sitemap %}
+    <box class="color-{{ section.color }}" section="{{ section.alias }}" color="{{ section.color }}" token="{{ section.title | truncate: 1, '' | capitalize }}">
+      <h3>{{ section.title }}</h3>
+      <p>{{ section.descr }}</p>
+      {% include _nav-sub.html items=section.pages color=section.color %}
+    </box>
+  {% endfor %}
+</nav>

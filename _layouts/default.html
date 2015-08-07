@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js loading">
+<html data-load-state="loading">
   <head>
     {% include _head.html %}
   </head>
@@ -7,7 +7,7 @@
   <body>
     {% include _header.html %}
 
-    {% include _sidebar.html %}
+    {% include _nav.html %}
 
     <pagewrap>
       <div class="fb-spinner">
@@ -20,19 +20,13 @@
 
       <main>
         <hero>
-          {% if page.hero_image %}
           <inner style="background-image: url('{{ page.hero_image }}');">
-          {% else %}
-          <inner>
-          {% endif %}
             <h1>{{ page.title }}</h1>
           </inner>
         </hero>
-        <row>
-          <column>
-            {{ content }}
-          </column>
-        </row>
+        <inner>
+          {{ content }}
+        </inner>
       </main>
     </pagewrap>
 

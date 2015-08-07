@@ -1,23 +1,32 @@
 
 nav {
   &.main {
+    @extend %clearfix;
+    padding: 0 3vw;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 0;
+    text-align: center;
 
     .logo {
       text-align: center;
     }
 
-    row {
-      // white-space: nowrap;
-      overflow: hidden;
-    }
+    // TODO: some kind of side-scroll
+    // white-space: nowrap;
+    // @extend .x-scroll;
 
     box, .box {
-      display: block;
+      display: inline-block;
+      vertical-align: top;
       white-space: normal;
-      margin-bottom: 0;
+      margin-bottom: 2vw;
+
+      max-width: 300px;
+      width: 21.5vw;
+      margin-left: 1vw;
+      margin-right: 1vw;
 
       font-size: $font-size;
 
@@ -44,7 +53,7 @@ nav {
 
       p {
         line-height: 25px;
-        font-size: $font-size-small;
+        font-size: $font-size;
         font-style: italic;
       }
 

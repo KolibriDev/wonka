@@ -1,3 +1,5 @@
+$debug: true;
+
 // Typography
 $font-family: 'Merriweather', 'Georgia', 'Times New Roman', Times, serif;
 $font-family-alt: 'ars-maquette-web', Helvetica, Arial, sans-serif;
@@ -10,56 +12,14 @@ $font-size: 16px;
 $font-color: #333;
 $line-height: 1.25;
 
-$font-size-tiny: 12px;
-$font-size-small: 14px;
-$font-size-large: 20px;
-$font-size-larger: 26px;
-
 // Sizes
-$spacing: 20px;
-$page-max-width: 1280px;
+$spacing: 10px;
+$page-max-width: 1400px;
 $page-min-width: 320px;
-
-// Grid
-$grid-columns: 12;
-$grid-gutter: $spacing;
 
 // Radius
 $radius: 0;
 $box-radius: $radius;
-$form-radius: $radius;
-$button-radius: 50px;
-
-// Forms
-$form-font-weight: bold;
-$form-text-transform: none;
-$label-font-weight: bold;
-$label-text-transform: none;
-
-// Used for both forms and buttons
-$element-xsmall: rem-calc(50);
-$element-small: rem-calc(50);
-$element-medium: rem-calc(50);
-$element-large: rem-calc(50);
-$element-xlarge: rem-calc(50);
-$element-xxlarge: rem-calc(50);
-
-$element-font-xsmall: rem-calc(14);
-$element-font-small: rem-calc(14);
-$element-font-medium: rem-calc(14);
-$element-font-large: rem-calc(14);
-$element-font-xlarge: rem-calc(14);
-$element-font-xxlarge: rem-calc(14);
-
-// breakpoint   size             font-size             padding
-$elementArray:
-  ("xsmall", $element-xsmall, $element-font-xsmall, $spacing)
-  ("small", $element-small, $element-font-small, $spacing)
-  ("medium", $element-medium, $element-font-medium, $spacing)
-  ("large", $element-large, $element-font-large, $spacing)
-  ("xlarge", $element-xlarge, $element-font-xlarge, $spacing)
-  ("xxlarge", $element-xxlarge, $element-font-xxlarge, $spacing)
-;
 
 // Grayscale
 $color-gray-dark: #555;
@@ -79,7 +39,7 @@ $color-light: #EAEAEA;
 $color-green: #1FA95F;
 $color-blue: #1789AA;
 $color-red: #E15A50;
-$color-purple: #857069;
+$color-brown: #857069;
 $color-turquoise: #54BBBC;
 
 $color-border: $color-gray;
@@ -91,8 +51,7 @@ $colorArray:
   ("green",     $color-green,  white)
   ("blue",      $color-blue,   white)
   ("red",       $color-red,    white)
-  ("purple",    $color-purple, white)
-  ("brown",     $color-purple, white)
+  ("brown",     $color-brown, white)
   ("turquoise", $color-turquoise, white)
   ("yellow",    $color-yellow, $color-dark)
   ("dark",      $color-dark,   white)
@@ -117,10 +76,17 @@ $opposite-float: right;
 }
 
 // Transitions duration
-$trans-dur-fast: 125ms;
-$trans-dur: 250ms;
-$trans-dur-slow: 350ms;
-$trans-dur-slower: 600ms;
+$trans-dur-fast: 100ms;
+$trans-dur: 200ms;
+$trans-dur-slow: 300ms;
+$trans-dur-slower: 400ms;
+
+@if $debug {
+  $trans-dur-fast: $trans-dur-fast * 5;
+  $trans-dur: $trans-dur * 5;
+  $trans-dur-slow: $trans-dur-slow * 5;
+  $trans-dur-slower: $trans-dur-slower * 5;
+}
 
 // Media Queries
 $screen: "only screen";
@@ -132,15 +98,15 @@ $retina:
 
 // To create new breakpoint:
 // Create range values, add to breakArray, add to respond-to mixin
-
-$xsmall-range: (0rem, 480px);
+$xsmall-range: (0px, 480px);
 $small-range: (481px, 640px);
-$medium-range: (641px, 830px);
-$large-range: (831px, 1024px);
-$xlarge-range: (1025px, $page-max-width);
-$xxlarge-range: ($page-max-width + 1, 9999px);
+$medium-range: (641px, 800px);
+$large-range: (801px, 1024px);
+$xlarge-range: (1025px, 1280px);
+$xxlarge-range: (1281px, $page-max-width);
+$full-range: ($page-max-width + 1);
 
-// name     lower-bound                 upper-bound
+// name       lower-bound                  upper-bound
 $breakArray:
   ("xsmall",  lower-bound($xsmall-range),  upper-bound($xsmall-range))
   ("small",   lower-bound($small-range),   upper-bound($small-range))
@@ -148,6 +114,7 @@ $breakArray:
   ("large",   lower-bound($large-range),   upper-bound($large-range))
   ("xlarge",  lower-bound($xlarge-range),  upper-bound($xlarge-range))
   ("xxlarge", lower-bound($xxlarge-range), upper-bound($xxlarge-range))
+  ("full",    lower-bound($full-range),    0)
 ;
 
 $xsmall-up: "#{$screen} and (min-width:#{lower-bound($xsmall-range)})";
@@ -167,3 +134,6 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 
 $xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
 $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
+
+$full-up: "#{$screen} and (min-width:#{lower-bound($full-range)})";
+$full-only: "#{$screen} and (min-width:#{lower-bound($full-range)})";

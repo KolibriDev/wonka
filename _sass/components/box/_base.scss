@@ -1,6 +1,6 @@
 
-.box, box {
-  @include clearfix;
+box {
+  @extend %clearfix;
   display: block;
   position: relative;
 
@@ -12,7 +12,7 @@
   border-radius: $box-radius;
 
   @each $name, $color, $text in $colorArray {
-    &.accent-#{$name} {
+    &.color-#{$name} {
       &:before {
         background-color: $color;
       }

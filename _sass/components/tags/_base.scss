@@ -54,8 +54,8 @@ tags {
     }
 
     @each $name, $color, $text in $colorArray {
-      box.accent-#{$name} &,
-      box.accent-#{$name} + &,
+      box.color-#{$name} &,
+      box.color-#{$name} + &,
       &.#{$name} {
         background-color: rgba($color,0.1);
 
