@@ -1,0 +1,143 @@
+
+html {
+  overflow: hidden;
+  height: 100%;
+
+  line-height: $line-height;
+
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+
+  background: $body-background;
+
+  direction: $text-direction;
+
+  &, * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  &:before {
+    @extend .loader;
+    content: '';
+    opacity: 0;
+    z-index: 9999 !important;
+    transition: opacity $trans-dur-slow;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+
+    opacity: 1;
+    transition: opacity $trans-dur-slower;
+
+    background-image: rgba(254,255,0,0.29),
+                      rgba(0,0,0,0);
+    background-image: -moz-radial-gradient(center, ellipse cover, rgba(254,255,0,0.29) 0%, rgba(254,255,0,0) 100%),
+                      -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+    background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(254,255,0,0.29)), color-stop(100%, rgba(254,255,0,0))),
+                      -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,0)), color-stop(40%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.1)));
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(254,255,0,0.29) 0%, rgba(254,255,0,0) 100%),
+                      -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+    background-image: -o-radial-gradient(center, ellipse cover, rgba(254,255,0,0.29) 0%, rgba(254,255,0,0) 100%),
+                      -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+    background-image: -ms-radial-gradient(center, ellipse cover, rgba(254,255,0,0.29) 0%, rgba(254,255,0,0) 100%),
+                      -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+    background-image: radial-gradient(ellipse at center, rgba(254,255,0,0.29) 0%, rgba(254,255,0,0) 100%),
+                      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.1) 100%);
+  }
+
+  html[data-load-state='loading'] & {
+    &:after {
+      opacity: 0;
+    }
+  }
+  html[data-load-state='post-load'] &,
+  html[data-load-state='loading'] & {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+// Default box-sizing to border-box, except for images and hr
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+hr,img {
+  box-sizing: content-box;
+}
+
+// Cheat classes
+
+.notransition {
+  transition: none !important;
+}
+
+.noscroll {
+  overflow: hidden !important;
+}
+
+.x-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  &.force { overflow-x: scroll; }
+}
+
+.y-scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  &.force { overflow-y: scroll; }
+}
+
+.x-scroll.force, .y-scroll.force,
+.x-scroll, .y-scroll {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    width: 8px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color-dark,.1);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    transition: background $trans-dur;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: $color-dark;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background $trans-dur;
+  }
+
+  &.scroll-hidden {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+  @each $name, $color, $text in $colorArray {
+    html[data-color="#{$name}"] & {
+      &::-webkit-scrollbar-track {
+        background: rgba($color,.1);
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color;
+      }
+    }
+  }
+}

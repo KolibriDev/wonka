@@ -1,0 +1,63 @@
+
+header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+
+  margin-bottom: $spacing;
+  padding: 0 0;
+  height: 120px;
+
+  background: $color-yellow;
+
+  transform: translate3d(0,0,0);
+  transition: transform $trans-dur;
+
+  html[data-location='/'] &,
+  html[data-load-state="loading"] & {
+    transform: translate3d(0,-100%,0);
+  }
+
+  inner {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 0;
+    max-width: $page-max-width;
+    height: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0; left: $spacing; bottom: 0;
+
+    margin: auto;
+    height: 42px;
+
+    h1 {
+      .svg-kolibri-flower {
+        width: 36px;
+
+        path {
+          fill: white;
+        }
+      }
+      span {
+        font-size: 34px;
+        letter-spacing: -2px;
+        color: white;
+      }
+      em {
+        display: none;
+        font-size: 9px;
+        color: white;
+      }
+    }
+  }
+
+  @each $name, $color, $text in $colorArray {
+    html[data-color="#{$name}"] & {
+      background: $color;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+---
+title: Ákvarðanir
+---
+
+# Ákvarðanir

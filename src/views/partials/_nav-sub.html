@@ -1,0 +1,22 @@
+{% assign items = include.items %}
+{% assign color = include.color %}
+
+<tags>
+{% for item in items %}
+  {% assign item_url = item | prepend:"/docs/" %}
+
+  {% if item_url == page.url %}
+    {% assign active = "active" %}
+  {% else %}
+    {% assign active = "" %}
+  {% endif %}
+
+  {% for p in site.docs %}
+    {% if p.url == item_url %}
+      <tag><a class="{{ active }}" color="{{ color }}" href="{{ site.baseurl }}{{ site.url }}{{ p.url }}"><span>{{ p.title }}</span></a></tag>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+{% endfor %}
+</tags>

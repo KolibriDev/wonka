@@ -1,0 +1,5 @@
+---
+title: Proof..
+---
+
+..of concept

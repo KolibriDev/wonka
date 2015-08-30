@@ -1,0 +1,105 @@
+{
+  "env": {
+    "dir": "./dist/"
+  },
+  "cmd": {
+    "www": "./bin/www"
+  },
+  "connect": {
+    "port": "1337",
+    "livereload": true
+  },
+  "templates": {
+    "watchSrc": [
+      "./src/views/**/*.jade",
+      "./content/**/*.md"
+    ],
+    "src": [
+      "./src/views/**/*.jade",
+      "!./src/views/**/_*.jade"
+    ],
+    "jade": {
+      "pretty": false
+    }
+  },
+  "scripts": {
+    "src": ["./src/js/**/*.js"],
+    "almondSrc": "./src/js/vendor/almond.js",
+    "jsFilter": "**/*.js",
+    "babel": {
+      "src": ["./src/js/**/*.js", "!**/vendor/**"],
+      "config": {
+        "modules": "amd"
+      }
+    },
+    "lint": {
+      "config": "./.jshintrc"
+    },
+    "subDir": "js/"
+  },
+  "manifest": {
+    "filename": "manifest.appcache",
+    "src": [
+      "**/*",
+      "**/main.js",
+      "!**/img/icon/**/*",
+      "!**/img/load/**/*"
+    ],
+    "exclude": [
+      "manifest.appcache",
+      "**/img/**/*",
+      "**/fonts/**/*.woff",
+      "**/fonts/**/*.woff2"
+    ],
+    "fallback": ["/ /offline.html"],
+    "network": [
+      "*"
+    ]
+  },
+  "images": {
+    "src": [
+      "./src/img/**/*.{png,gif,jpg,jpeg}",
+      "./content/**/*.{png,gif,jpg,jpeg}"
+    ],
+    "subDir": "img/"
+  },
+  "styles": {
+    "watchSrc": "./src/scss/**/*.scss",
+    "src": "./src/scss/*.scss",
+    "cssFilter": "**/*.css",
+    "scssFilter": "**/*.scss",
+    "srcDir": "./src/scss/",
+    "subDir": "css/",
+    "autoprefixer": {
+      "browsers": [
+        "ie >= 10",
+        "> 1%",
+        "last 2 versions",
+        "Firefox ESR",
+        "Opera 12.1"
+      ],
+      "cascade": false
+    }
+  },
+  "svg": {
+    "src": "./src/img/**/*.svg",
+    "subDir": "img/"
+  },
+  "ico": {
+    "src": "./src/img/**/*.ico",
+    "subDir": "img/"
+  },
+  "fonts": {
+    "src": "./src/fonts/**",
+    "subDir": "fonts/"
+  },
+  "videos": {
+    "src": "./src/videos/**",
+    "subDir": "videos/"
+  },
+  "bower": {
+    "jsDest": "./src/js/vendor/",
+    "imgDest": "./src/img/vendor/",
+    "scssDest": "./src/scss/vendor/"
+  }
+}

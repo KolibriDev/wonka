@@ -1,0 +1,17 @@
+name: Wonka
+markdown: redcarpet
+
+defaults:
+  -
+    values:
+      layout: "default"
+      title: "Wonka - Vinnukúltúr Kolibri"
+      hero_image: "//img.kolibri.is/kolibri/_A9T1184-scaled.jpg"
+
+collections:
+  docs:
+    output: true
+
+sass:
+    sass_dir: _sass
+    style: :compressed
