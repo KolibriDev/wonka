@@ -1,6 +1,6 @@
 (function() {
   require.config({
-    baseUrl: '/js',
+    baseUrl: '/wonka/js',
     paths: {
       jquery: 'vendor/jquery',
       domReady: 'vendor/domReady',
