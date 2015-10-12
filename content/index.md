@@ -1,10 +1,5 @@
 ---
-layout: default
-title: Wonka – Stjórnkerfi Kolibri
+title: Wonka
+subTitle: Stjórnkerfi Kolibri
+color: yellow
 ---
-
-## Wonka er stjórnkerfi Kolibri
-
-Á þessari síðu ætlum við í Kolibri að deila með ykkur hvernig við vinnum.
-
-Síðan er í vinnslu.

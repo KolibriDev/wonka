@@ -1,6 +1,6 @@
 
 html {
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
 
   line-height: $line-height;
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow: auto;
   margin: 0;
   height: 100%;
 //  &:before {

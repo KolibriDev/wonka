@@ -1,0 +1,11 @@
+mixin group(group)
+  box(class='#{group.color}' section='#{group.id}' token='#{group.token}')
+    p #{group.title}
+
+    | !{group.html}
+
+    if group.foo.length > 0
+      hr
+      each bar in group.foo.foos
+        p #{bar.id} x #{bar.href}
+

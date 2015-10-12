@@ -1,4 +1,14 @@
-row
-  column
-    p FOFOFOOFOFOFO
-    +showJson(content)
+
+
+nav.main
+  .logo
+    h1
+      a(href='/')
+        include ./vectors/_kolibri-flower.svg
+        span #{content.index.meta.title}
+        em #{content.index.meta.subTitle}
+
+  box-wrap
+    each group in content.groups
+      +group(group)
+
