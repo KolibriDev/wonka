@@ -1,4 +1,7 @@
+extends shared/_layout
 
-include mixins/_mixins
+block content
+  include partials/_content
 
-+showJson(content)
+block footer
+  include partials/_footer

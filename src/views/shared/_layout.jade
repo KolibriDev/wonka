@@ -1,0 +1,24 @@
+doctype html
+//[if lt IE 9]><html class="lt-ie10 lt-ie9"><![endif]
+//[if IE 9]>   <html class="lt-ie10 ie9"><![endif]
+//[if gt IE 9]><!
+html(vizido-state='loading')
+  //<![endif]
+  include ../mixins/_mixins
+  include _head
+
+  body
+
+    block header
+
+    pagewrap
+      main
+        block content
+
+    block footer
+
+    block javascript
+      if env === 'production'
+        script(src='/js/main.js')
+      else
+        script(data-main='js/main', src='/js/vendor/require.js')
